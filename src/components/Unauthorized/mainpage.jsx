@@ -1,7 +1,9 @@
 import React from 'react';
+import Search from './search';
 
 const CarRentalInterface = () => {
   return (
+    <>
     <div className="relative min-h-screen bg-blue-400 font-serif">
       {/* background image */}
       <div className="absolute inset-0 z-0">
@@ -22,7 +24,7 @@ const CarRentalInterface = () => {
             <a href="#" className="text-yellow-500 font-medium">Home</a>
             <a href="#" className="text-white font-medium hover:text-yellow-500">About</a>
             <a href="#" className="text-white font-medium hover:text-yellow-500">Pricing</a>
-            <a href="#" className="text-white font-medium hover:text-yellow-500">Our Car</a>
+            <a href="#" className="text-white font-medium hover:text-yellow-500">Our Bike</a>
             <a href="#" className="text-white font-medium hover:text-yellow-500">Blog</a>
             <a href="#" className="text-white font-medium hover:text-yellow-500">Contact</a>
           </div>
@@ -44,7 +46,7 @@ const CarRentalInterface = () => {
           </p>
           
           <div className="mt-10 flex items-center">
-            <button className="flex items-center justify-center w-14 h-14 rounded-full bg-yellow-400 cursor-pointer text-white mr-4 hover:bg-yellow-500">
+            <button className="btn btn-accent btn-outline flex items-center justify-center w-14 h-14 rounded-full bg-yellow-400 cursor-pointer text-white mr-4 hover:bg-yellow-500">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 ">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
@@ -64,7 +66,7 @@ const CarRentalInterface = () => {
                 <input 
                   type="text" 
                   placeholder="City, Airport, Station, etc" 
-                  className="w-full p-2 border border-gray-300 rounded"
+                  className="w-full p-2 border border-gray-300 rounded text-black"
                 />
               </div>
               
@@ -73,7 +75,7 @@ const CarRentalInterface = () => {
                 <input 
                   type="text" 
                   placeholder="City, Airport, Station, etc" 
-                  className="w-full p-2 border border-gray-300 rounded"
+                  className="w-full p-2 border border-gray-300 rounded text-black"
                 />
               </div>
               
@@ -91,7 +93,7 @@ const CarRentalInterface = () => {
                   <input 
                     type="date" 
                     placeholder="Date" 
-                    className="w-full p-2 border border-gray-300 rounded"
+                    className="w-full p-2 border border-gray-300 rounded "
                   />
                 </div>
               </div>
@@ -101,11 +103,11 @@ const CarRentalInterface = () => {
                 <input 
                   type="text" 
                   placeholder="Time" 
-                  className="w-full p-2 border border-gray-300 rounded"
+                  className="w-full p-2 border border-gray-300 rounded text-black"
                 />
               </div>
               
-              <button className="w-full bg-yellow-500 text-white font-medium py-3 hover:bg-yellow-600 transition duration-200 cursor-pointer">
+              <button className="w-full bg-yellow-500 text-white font-medium py-3 hover:bg-yellow-600 transition duration-200 cursor-pointer btn btn-accent btn-outline">
                 Search Vehicle
               </button>
             </div>
@@ -113,6 +115,10 @@ const CarRentalInterface = () => {
         </div>
       </main>
     </div>
+    <div>
+      <Search/>
+    </div>
+    </>
   );
 };
 
