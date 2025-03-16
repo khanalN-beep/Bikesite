@@ -14,6 +14,14 @@ const Navbar = () => {  // Capitalize the component name to follow React convent
   const goToContact = () => {
     navigate("/contact");
   };
+  const goToAbout = () => {
+    navigate("/aboutpage");
+  };
+  const goToBikes = () => {
+    navigate("/ourbikes");
+  };
+
+
 
 
   return (
@@ -30,7 +38,7 @@ const Navbar = () => {  // Capitalize the component name to follow React convent
               Home
             </a>
             <a
-              href="#"
+              onClick={goToAbout}
               className="text-black font-medium hover:text-yellow-500 cursor-pointer"
             >
               About
@@ -42,7 +50,7 @@ const Navbar = () => {  // Capitalize the component name to follow React convent
               Pricing
             </button>
             <a
-              href="#"
+              onClick={goToBikes}
               className="text-black font-medium hover:text-yellow-500 cursor-pointer"
             >
               Our Bike

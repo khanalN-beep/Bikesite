@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import Navbar from "../navbar";
 import Footer from "../footer";
 
-const pricing = () => {
+const Pricing = () => {
   const [hoveredCarId, setHoveredCarId] = useState(null);
+  const [hoveredColumn, setHoveredColumn] = useState(null); // Track which column is hovered
 
   const carData = [
     {
@@ -117,8 +118,18 @@ const pricing = () => {
               </div>
             </div>
 
-            {/* Rate columns */}
-            <div className="p-6 flex flex-col items-center justify-center bg-gray-100">
+            {/* Per Hour Rate column */}
+            <div
+              className="p-6 flex flex-col items-center justify-center bg-gray-100 relative"
+              onMouseEnter={() => {
+                setHoveredCarId(car.id);
+                setHoveredColumn("hour");
+              }}
+              onMouseLeave={() => {
+                setHoveredCarId(null);
+                setHoveredColumn(null);
+              }}
+            >
               <div className="flex items-baseline">
                 <span className="text-orange-400 text-2xl font-bold">
                   ${car.hourRate}
@@ -128,12 +139,28 @@ const pricing = () => {
               <div className="text-gray-600 mt-2">
                 ${car.fuelSurcharge}/hour fuel surcharges
               </div>
+
+              {/* Rent button shown when hovered */}
+              {hoveredCarId === car.id && hoveredColumn === "hour" && (
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-blue-300 bg-opacity-50 transition-opacity duration-300 opacity-100">
+                  <button className="bg-yellow-500 text-white py-2 px-4 rounded-md">
+                    RENT A CAR
+                  </button>
+                </div>
+              )}
             </div>
 
+            {/* Per Day Rate column */}
             <div
-              className="p-6 flex flex-col items-center justify-center"
-              onMouseEnter={() => setHoveredCarId(car.id)}
-              onMouseLeave={() => setHoveredCarId(null)}
+              className="p-6 flex flex-col items-center justify-center relative"
+              onMouseEnter={() => {
+                setHoveredCarId(car.id);
+                setHoveredColumn("day");
+              }}
+              onMouseLeave={() => {
+                setHoveredCarId(null);
+                setHoveredColumn(null);
+              }}
             >
               <div className="flex items-baseline">
                 <span className="text-orange-400 text-2xl font-bold">
@@ -144,36 +171,56 @@ const pricing = () => {
               <div className="text-gray-600 mt-2">
                 ${car.fuelSurcharge}/hour fuel surcharges
               </div>
+
+              {/* Rent button shown when hovered */}
+              {hoveredCarId === car.id && hoveredColumn === "day" && (
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-blue-300 bg-opacity-50 transition-opacity duration-300 opacity-100">
+                  <button className="bg-yellow-500 text-white py-2 px-4 rounded-md">
+                    RENT A CAR
+                  </button>
+                </div>
+              )}
             </div>
 
-            <div className="p-6 flex flex-col items-center justify-center bg-gray-100">
+            {/* Leasing column */}
+            <div
+              className="p-6 flex flex-col items-center justify-center bg-gray-100 relative"
+              onMouseEnter={() => {
+                setHoveredCarId(car.id);
+                setHoveredColumn("month");
+              }}
+              onMouseLeave={() => {
+                setHoveredCarId(null);
+                setHoveredColumn(null);
+              }}
+            >
               <div className="flex items-baseline">
                 <span className="text-orange-400 text-2xl font-bold">
                   ${car.monthRate}
                 </span>
                 <span className="text-gray-500 ml-1">/per month</span>
               </div>
-              <div className="text-gray-600 mt-2 mb-8 mb-20">
+              <div className="text-gray-600 mt-2 mb-20">
                 ${car.fuelSurcharge}/hour fuel surcharges
               </div>
-            </div>
 
-            {/* Rent button shown when hovered */}
-            {hoveredCarId === car.id && (
-              <div className="absolute inset-0 flex flex-col items-center justify-center  bg-opacity-50 transition-opacity duration-300 opacity-100">
-                <button className="bg-yellow-500 text-white py-2 px-4 rounded-md">
-                  RENT A CAR
-                </button>
-              </div>
-            )}
+              {/* Rent button shown when hovered */}
+              {hoveredCarId === car.id && hoveredColumn === "month" && (
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-blue-300 bg-opacity-50 transition-opacity duration-300 opacity-100">
+                  <button className="bg-yellow-500 text-white py-2 px-4 rounded-md">
+                    RENT A CAR
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         ))}
       </div>
       <div className="mt-20">
-        <Footer/>
+        <Footer />
       </div>
     </>
   );
 };
 
-export default pricing;
+export default Pricing;
