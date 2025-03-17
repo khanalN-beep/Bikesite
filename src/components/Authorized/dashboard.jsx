@@ -139,7 +139,7 @@ const BikeRentalDashboard = () => {
               <a className="font-medium">Inventory</a>
             </li>
             <li >
-              <a onClick={goToUser} className="font-medium">Customers</a>
+              <a onClick={goToUser} className="font-medium">My Profile</a>
             </li>
             <li >
               <a onClick={goToFeedback}  className="font-medium">Reports</a>
