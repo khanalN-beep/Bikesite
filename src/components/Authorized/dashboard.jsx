@@ -10,6 +10,9 @@ const BikeRentalDashboard = () => {
   const goToFeedback = () => {
     navigate("/feedbackpage");
   };
+  const goToUser = () => {
+    navigate("/UserDashboard"); // This uses "UserDashboard"
+  };
   
 
   const recentBookings = [
@@ -136,7 +139,7 @@ const BikeRentalDashboard = () => {
               <a className="font-medium">Inventory</a>
             </li>
             <li >
-              <a className="font-medium">Customers</a>
+              <a onClick={goToUser} className="font-medium">Customers</a>
             </li>
             <li >
               <a onClick={goToFeedback}  className="font-medium">Reports</a>

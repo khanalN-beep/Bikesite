@@ -10,7 +10,7 @@ import OurBlog from './components/Unauthorized/Pages/ourblog';
 import Dashboard from './components/Authorized/dashboard';
 import Booking from './components/Authorized/afolder/booking';
 import Feedback from './components/Authorized/afolder/feedback';
-
+import User from './components/Authorized/afolder/user'; 
 
 
 const App = () => {
@@ -27,6 +27,8 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/feedbackpage" element={<Feedback/>} />
+        <Route path="/userdashboard" element={<User />} />
+
       </Routes>
     </Router>
   );
