@@ -79,7 +79,7 @@ const blog = () => {
                 </div>
 
                 <div className="px-4 pb-6">
-                  <h3 className="text-xl font-bold mb-3 hover:text-blue-600 transition-colors cursor-pointer">
+                  <h3 className="text-xl font-bold mb-3 text-black  hover:text-blue-600 transition-colors cursor-pointer">
                     {post.title}
                   </h3>
                   <p className="text-gray-600">{post.discription}</p>
@@ -94,6 +94,6 @@ const blog = () => {
       </div>
     </>
   );
-};
+};  
 
 export default blog;

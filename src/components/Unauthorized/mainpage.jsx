@@ -5,8 +5,7 @@ import Navbar from "./navbar";
 const CarRentalInterface = () => {
   return (
     <>
-      <div className="relative min-h-screen bg-blue-400 font-serif">
-        {/* background image */}
+      <div className="relative h-screen bg-blue-400 font-serif">
         <div className="absolute inset-0 z-0">
           <img
             src="/"
@@ -14,10 +13,7 @@ const CarRentalInterface = () => {
             className="w-full h-full object-cover"
           />
         </div>
-
-        {/* Nav */}
-        <Navbar/>
-
+        <Navbar />
         <main className="relative z-10 px-4 pt-20 pb-20 flex items-center justify-between max-w-6xl mt-8 mx-auto">
           <div className="w-full md:w-1/2">
             <h1 className="text-6xl font-light text-white leading-tight">

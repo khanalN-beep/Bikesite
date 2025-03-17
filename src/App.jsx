@@ -6,6 +6,10 @@ import Contact from './components/Unauthorized/Pages/contact';
 import Pricing from './components/Unauthorized/Pages/pricing';
 import Aboutpage from './components/Unauthorized/Pages/aboutpage';
 import Ourbikes from './components/Unauthorized/Pages/ourbikes';
+import OurBlog from './components/Unauthorized/Pages/ourblog';
+import Dashboard from './components/Authorized/dashboard';
+
+
 
 const App = () => {
   return (
@@ -17,8 +21,8 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/aboutpage" element={<Aboutpage />} />
         <Route path="/ourbikes" element={<Ourbikes />} />
-
-
+        <Route path="/ourblog" element={<OurBlog />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );

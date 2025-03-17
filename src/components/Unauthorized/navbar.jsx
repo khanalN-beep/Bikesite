@@ -20,15 +20,20 @@ const Navbar = () => {  // Capitalize the component name to follow React convent
   const goToBikes = () => {
     navigate("/ourbikes");
   };
-
+  const goToOurBlogs = () => {
+    navigate("/ourblog");
+  };
+  const goToDashboard = () => {
+    navigate("/dashboard");
+  };
 
 
 
   return (
     <div>
-      <header className="relative z-10 px-4 py-4">
+      <header className="relative w-full  z-10 px-4 py-4 bg-white">
         <nav className="flex items-center justify-between max-w-6xl mx-auto">
-          <div className="flex items-center">
+          <div className="flex items-center cursor-pointer" onClick={goToDashboard}>
             <span className="text-2xl font-bold text-black">
               AUTO<span className="text-yellow-500">ROAD</span>
             </span>
@@ -56,7 +61,7 @@ const Navbar = () => {  // Capitalize the component name to follow React convent
               Our Bike
             </a>
             <a
-              href="#"
+              onClick={goToOurBlogs}
               className="text-black font-medium hover:text-yellow-500 cursor-pointer"
             >
               Blog
