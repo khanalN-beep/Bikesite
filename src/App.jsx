@@ -8,6 +8,8 @@ import Aboutpage from './components/Unauthorized/Pages/aboutpage';
 import Ourbikes from './components/Unauthorized/Pages/ourbikes';
 import OurBlog from './components/Unauthorized/Pages/ourblog';
 import Dashboard from './components/Authorized/dashboard';
+import Booking from './components/Authorized/afolder/booking';
+import Feedback from './components/Authorized/afolder/feedback';
 
 
 
@@ -23,6 +25,8 @@ const App = () => {
         <Route path="/ourbikes" element={<Ourbikes />} />
         <Route path="/ourblog" element={<OurBlog />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/booking" element={<Booking />} />
+        <Route path="/feedbackpage" element={<Feedback/>} />
       </Routes>
     </Router>
   );
